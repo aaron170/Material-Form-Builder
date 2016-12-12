@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Material Form Builder</title>
+	<link href="http://fonts.googleapis.com/css?family=Abel" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/bootstrap-theme.css">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/styles.css">
+	<script src="js/jquery-1.11.1.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			$('#tableViewBtn').on('click', function(){
+				$('#tableView').show();
+				$('#listView').hide();
+			});
+			$('#listViewBtn').on('click', function(){
+				$('#listView').show();
+				$('#tableView').hide();
+			});
+			$('.form-group').on('click',function(){
+				
+				$('.form-group').removeClass('item-selected');
+				$(this).addClass('item-selected');
+			});
+		});
+	</script>
+</head>
+<body>
+	<div class="container-fluid">
+		<header>
+			<nav class="navbar navbar-default">
+				<div class="container-fluid">
+					<div class="navbar-header">
+						<a class="navbar-brand" href="#">
+							<img alt="Brand" src="images/form-logo.png">
+							<span class="heading">form builder</span>
+						</a>
+					</div>
+				</div>
+			</nav>
+		</header>
+		<aside class="sidebar">
+			<!-- Nav tabs -->
+			<ul class="nav nav-tabs" role="tablist">
+				<li class="active"><a href="#elements" aria-controls="elements" role="tab" data-toggle="tab">Elements</a></li>
+				<li><a href="#prop" aria-controls="prop" role="tab" data-toggle="tab">Property</a></li>
+				<li><a href="#preForm" aria-controls="preForm" role="tab" data-toggle="tab">Pre-Defined Form</a></li>
+			</ul>
+
+			<!-- Tab panes -->
+			<div class="tab-content">
+				<div class="tab-pane active" id="elements">
+					<div class="pull-left btns">
+						<button class="btn btn-success" title="Table View" id="tableViewBtn"><i class="fa fa-table"></i></button>
+						<button class="btn btn-warning" title="List View" id="listViewBtn"><i class="fa fa-list"></i></button>
+					</div>
+					<ul class="form-elements" id="tableView">
+						<li data-toggle="tooltip" data-placement="top" title="Input Text">
+							<a href=""><i class="input-icon"></i></a></li>
+						<li data-toggle="tooltip" data-placement="top" title="Input Password">
+							<a href=""><i class="inputpass-icon"></i></a></li>
+						<li data-toggle="tooltip" data-placement="top" title="Checkbox">
+							<a href=""><i class="fa fa-square-o"></i></a></li>
+						<li data-toggle="tooltip" data-placement="top" title="Radio Button">
+							<a href=""><i class="fa fa-circle-o"></i></a></li>
+						<li data-toggle="tooltip" data-placement="top" title="Textarea">
+							<a href=""><i class="textarea-icon"></i></a></li>
+						<li data-toggle="tooltip" data-placement="top" title="Select Dropdown">
+							<a href=""><i class="select-icon"></i></a></li>
+						<li data-toggle="tooltip" data-placement="top" title="Label">
+							<a href=""><i class="label-icon"></i></a></li>
+						<li data-toggle="tooltip" data-placement="top" title="Button">
+							<a href=""><i class="button-icon"></i></a></li>
+					</ul>
+					<ul class="form-elements-list" id="listView" style="display:none;">
+						<li data-toggle="tooltip" data-placement="top" title="Input Text">
+							<a href=""><i class="input-icon"></i> &nbsp; Inout text</a></li>
+						<li data-toggle="tooltip" data-placement="top" title="Input Password">
+							<a href=""><i class="inputpass-icon"></i> &nbsp; Input Password</a></li>
+						<li data-toggle="tooltip" data-placement="top" title="Checkbox">
+							<a href=""><i class="fa fa-square-o"></i> &nbsp; Checkbox</a></li>
+						<li data-toggle="tooltip" data-placement="top" title="Radio Button">
+							<a href=""><i class="fa fa-circle-o"></i> &nbsp; Radio Button</a></li>
+						<li data-toggle="tooltip" data-placement="top" title="Textarea">
+							<a href=""><i class="textarea-icon"></i> &nbsp; Textarea</a></li>
+						<li data-toggle="tooltip" data-placement="top" title="Select Dropdown">
+							<a href=""><i class="select-icon"></i> &nbsp; Select Dropdown</a></li>
+						<li data-toggle="tooltip" data-placement="top" title="Label">
+							<a href=""><i class="label-icon"></i> &nbsp; Label</a></li>
+						<li data-toggle="tooltip" data-placement="top" title="Button">
+							<a href=""><i class="button-icon"></i> &nbsp; Button</a></li>
+					</ul>
+				</div>
+				<div class="tab-pane" id="prop">
+					tab 2
+				</div>
+				<div class="tab-pane" id="preForm">
+					tab 3
+				</div>
+			</div>
+		</aside>
+		
+		<section class="form-container">
+			<h2 class="col-md-12">Form Title</h2>
+			<div class="col-md-12 form-group item-selected">
+				<label>Label Name</label>
+				<a href="#" class="remove-item"></a>
+			</div>
+			<div class="col-md-12 form-group">
+				<input type="text" class="form-control" placeholder="Input Text">
+			</div>
+			<div class="col-md-12 form-group">
+				<input type="password" class="form-control" placeholder="Input Password">
+			</div>
+			<div class="col-md-12 form-group">
+				<label><input type="checkbox"> Checkbox</label>
+			</div>
+			<div class="col-md-12 form-group">
+				<label><input type="radio"> Radio</label>
+			</div>
+			<div class="col-md-12 form-group">
+				<textarea class="form-control" placeholder="Textarea"></textarea>
+			</div>
+			<div class="col-md-12 form-group">
+				<select class="form-control">
+					<option value="">Select option 1</option>
+					<option value="">Select option 2</option>
+					<option value="">Select option 3</option>
+					<option value="">Select option 4</option>
+					<option value="">Select option 5</option>
+				</select>
+			</div>
+			<div class="col-md-12 btns-group">
+				<button class="btn btn-primary">Save</button>
+				<button class="btn btn-danger">Cancel</button>
+			</div>
+		</section>
+
+	</div>
+</body>
+</html>
